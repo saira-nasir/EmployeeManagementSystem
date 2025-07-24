@@ -1,0 +1,64 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
+using System.Configuration;
+
+namespace EmployeeManagementSystem
+{
+    public class SalaryData
+    {
+        public int ID { get; set; }
+        public string Name { get; set; }
+        public string Gender { get; set; }
+        public string Contact { get; set; }
+        public string Position { get; set; }
+        public double Salary { get; set; }
+
+        private SqlConnection connect = new SqlConnection(
+            ConfigurationManager.ConnectionStrings["DefaultConnection"].ConnectionString);
+
+        public List<SalaryData> salaryEmployeeListData()
+        {
+            List<SalaryData> listdata = new List<SalaryData>();
+
+            try
+            {
+                if (connect.State != ConnectionState.Open)
+                    connect.Open();
+
+                string selectData = "SELECT * FROM employees WHERE status = 'Active' AND delete_date IS NULL";
+
+                using (SqlCommand cmd = new SqlCommand(selectData, connect))
+                {
+                    SqlDataReader reader = cmd.ExecuteReader();
+
+                    while (reader.Read())
+                    {
+                        SalaryData sd = new SalaryData();
+                        sd.ID = reader["id"] != DBNull.Value ? Convert.ToInt32(reader["id"]) : 0;
+                        sd.Name = reader["full_name"]?.ToString();
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            finally
+            {
+                if (connect.State == ConnectionState.Open)
+                    connect.Close();
+            }
+
+            return listdata;
+        }
+
+        public List<EmployeeData> employeeListData()
+        {
+            List<EmployeeData> listdata = new List<EmployeeData>();
+            // ... your logic ...
+            return listdata; // This must always be reached
+        }
+    }
+}
