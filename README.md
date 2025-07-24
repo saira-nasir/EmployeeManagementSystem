@@ -24,41 +24,93 @@ A modern **Employee Management System** developed using **C# Windows Forms** and
 
 | Layer      | Technology            |
 |------------|------------------------|
-| Frontend   | C# Windows Forms (.NET)|
+| Frontend   | Windows Forms (.NET)   |
 | Backend    | SQL Server             |
 | IDE        | Visual Studio          |
 | Language   | C#                     |
 
 ---
 
-## 📁 Folder Structure
+## 📁 Project Structure
+
 EmployeeManagementSystem/
 ├── Forms/
 │ ├── Login.cs
 │ ├── Signup.cs
 │ ├── Dashboard.cs
-├── Database/
-│ └── SQL Tables + Sample Data
-├── Screenshots/
-│ ├── Add salary.PNG
-│ └── Signout.PNG
+├── [All Screenshots directly in branch]
 ├── README.md
 └── EmployeeSystem.sln
 
+yaml
+Copy
+Edit
+
+---
 
 ## 📷 Screenshots
 
-### 💰 Salary Update Panel  
-<img src="Screenshots/Add salary.PNG" alt="Salary Update Panel" width="700"/>
+### 🔐 Login & Signup
+
+| Login Form | Signup Form |
+|------------|-------------|
+| ![Login](Login.PNG) | ![Signup](Signup.PNG) |
 
 ---
 
-### 🔒 Logout Confirmation  
-<img src="Screenshots/Signout.PNG" alt="Logout Confirmation" width="700"/>
+### 📊 Dashboard
+
+| Main Dashboard |
+|----------------|
+| ![Dashboard](Dashboard.PNG) |
 
 ---
 
-## 📦 How to Run
+### ➕ Add Employee
+
+| Add Employee Section | Data Added Confirmation |
+|----------------------|--------------------------|
+| ![Add Employee](ADD%20EMPLOYEESECTION.PNG) | ![Data Added](Data%20Added.PNG) |
+
+| Additional Add Confirmation | |
+|-----------------------------|--|
+| ![Added](added.PNG) |  |
+
+---
+
+### ❌ Delete Employee
+
+| Delete Option | Success Message |
+|---------------|-----------------|
+| ![Delete](delete.PNG) | ![Success Deletion](success%20deletion.PNG) |
+
+---
+
+### 💰 Salary Update
+
+| Salary Panel |
+|--------------|
+| ![Salary](Add%20salary.PNG) |
+
+---
+
+### 🔒 Logout
+
+| Logout Confirmation |
+|---------------------|
+| ![Signout](Signout.PNG) |
+
+---
+
+### 🗃️ Database Tables
+
+| User Table | Employee Table |
+|------------|----------------|
+| ![User Table](EmployeeManagementSystemDatabase-user(Table).PNG) | ![Employee Table](EmployeeManagementSystemDatabase-employee(Table).PNG) |
+
+---
+
+## 🧪 How to Run
 
 1. Clone or download the repo  
 2. Open `EmployeeSystem.sln` in Visual Studio  
@@ -66,7 +118,7 @@ EmployeeManagementSystem/
 4. Press `F5` or click **Start** to run the app  
 5. Create an account and manage employee data!
 
-
+---
 
 ## 🧠 SQL Schema (Sample)
 
@@ -97,26 +149,3 @@ Authentication logic
 Code modularity and maintainability
 
 ✅ The project fulfills all requirements: frontend design, database integration, CRUD functionality, salary calculations, and real-time updates.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
